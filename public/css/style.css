@@ -1,4 +1,4 @@
-body{
+body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -8,26 +8,27 @@ body{
 }
 
 
-.container-fluid{
+.container-fluid {
     flex: 1;
 }
-.fa-compass{
+
+.fa-compass {
     font-size: 1.8rem;
     color: rgb(248, 67, 6);
 }
 
-.navbar{
+.navbar {
     height: 5rem;
-    background-color: white !important;  
+    background-color: white !important;
 }
 
-.nav-link{
+.nav-link {
     color: rgb(72, 72, 72);
 }
 
 /* Footer */
 
-.f-container{
+.f-container {
     height: 8rem;
     background-color: whitesmoke;
     display: flex;
@@ -36,27 +37,27 @@ body{
     align-items: center;
 }
 
-.logo{
+.logo {
     font-size: 1.3rem;
     margin-right: 5px;
     margin-left: 5px;
 }
 
-.f-socials{
+.f-socials {
     display: flex;
 }
 
 /* Cards */
-.card{
+.card {
     border: none;
     margin-bottom: 1rem;
 }
 
-.card-body{
+.card-body {
     padding: 0%;
 }
 
-.card-img-top{
+.card-img-top {
     border-radius: 1rem;
     object-fit: cover !important;
 }
@@ -66,103 +67,134 @@ body{
     margin-right: 2%;
 } */
 
-.card-link{
+.card-link {
     text-decoration: none;
 }
 
-.card-img-overlay:hover{
+.card-img-overlay:hover {
     background-color: white;
     opacity: 0.2;
 }
 
 /* Form New,ejs */
 
-.btn-add{
+.btn-add {
     border: none;
     color: white;
-    background-color: rgb(248, 67, 6); 
+    background-color: rgb(248, 67, 6);
 }
 
 /* show page */
-.card-image{
+.card-image {
     height: 40vh;
     object-fit: cover !important;
-    
+
 }
 
-.card-btn{
+.card-btn {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
-.edit-btn{
-    background-color: rgb(248, 67, 6); 
+.edit-btn {
+    background-color: rgb(248, 67, 6);
     color: white;
     border: none;
     margin-right: 5px;
     padding-left: 2rem;
     padding-right: 2rem;
-    
+
 }
 
-.del-btn{
+.del-btn {
     color: white;
     border: none;
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
-.review-card{
+.review-card {
     border: 0.5px solid black;
     padding: 1rem;
 }
 
-.preview-img{
+.preview-img {
     width: 50%;
-    height:50%;
+    height: 50%;
     object-fit: cover !important;
 }
 
-.filters{
+.filters {
+    gap: 1.7rem;
     display: flex;
     text-align: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-size: 0.9rem;
     color: rgb(94, 94, 94);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 }
 
-.filter{
-    margin-right: 1.7rem;
+
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter {
+    /* margin-right: 1.7rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
 }
-.filter:hover{
+
+.filter:hover {
     color: black;
     cursor: pointer;
 }
-.filter p{
+
+.filter p {
     margin: 0%;
 }
-.tax-switch{
+/* 
+.tax-switch {
     padding: 0.5rem;
     border: 1px solid black !important;
     border-radius: 0.8rem;
+    min-width: max-content;
+    display: inline;
+} */
+
+.tax-switch {
+    padding: 0.5rem 1rem; /* Balanced padding left and right */
+    border: 1px solid black !important;
+    border-radius: 0.8rem;
+    min-width: max-content;
+    display: flex; /* Uses flexbox to keep items in a row */
+    align-items: center;
+    gap: 1rem; /* Adds nice spacing between the text and the toggle */
 }
-.form-check-reverse{
+
+.tax-switch .form-check-input {
+    margin: 0 !important; 
+    cursor: pointer;
+}
+
+.form-check {
     padding-left: 1rem !important;
     padding-right: 3.5rem !important;
 }
 
-.search-box{
+.search-box {
     border-radius: 12rem !important;
     padding: 0rem 3.5rem 0rem 3.5rem;
 }
 
-.search-btn{
+.search-btn {
     background-color: rgb(248, 67, 6);
     color: white;
     border: none;
@@ -173,6 +205,43 @@ body{
     padding-left: 1rem;
     padding-right: 1rem;
 }
-.search-btn:hover{
-    background-color:rgb(248, 67, 6);
+
+.search-btn:hover {
+    background-color: rgb(248, 67, 6);
+}
+
+.filters-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.filters {
+    gap: 1.7rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 0.9rem;
+    color: rgb(94, 94, 94);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    flex: 1; /* Allows the scrollable area to take remaining space */
+    width: 100%;
+}
+
+/* Prevent the tax switch from shrinking */
+.tax-toggle-wrapper {
+    flex-shrink: 0; 
+}
+
+/* Media Query for screens below 1220px */
+@media (max-width: 1220px) {
+    .filters-main-container {
+        flex-direction: column; /* Stack the filters and switch vertically */
+        align-items: flex-start; /* Align to the left (use 'center' if you prefer) */
+        gap: 1.5rem; /* Add spacing between the scrolling list and the switch */
+    }
 }
