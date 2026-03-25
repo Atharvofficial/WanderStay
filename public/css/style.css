@@ -59,7 +59,7 @@ body {
 
 .card-img-top {
     border-radius: 1rem;
-    object-fit: cover !important;
+    object-fit:cover !important;
 }
 
 /* .card-container{
@@ -170,13 +170,13 @@ body {
 } */
 
 .tax-switch {
-    padding: 0.5rem 1rem; /* Balanced padding left and right */
-    border: 1px solid black !important;
+    padding: 0.5rem 1rem; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.8rem;
     min-width: max-content;
-    display: flex; /* Uses flexbox to keep items in a row */
+    display: flex; 
     align-items: center;
-    gap: 1rem; /* Adds nice spacing between the text and the toggle */
+    gap: 1rem; 
 }
 
 .tax-switch .form-check-input {
@@ -228,7 +228,7 @@ body {
     overflow-x: auto;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    flex: 1; /* Allows the scrollable area to take remaining space */
+    /* flex: 1; Allows the scrollable area to take remaining space */
     width: 100%;
 }
 
@@ -237,11 +237,77 @@ body {
     flex-shrink: 0; 
 }
 
-/* Media Query for screens below 1220px */
+
 @media (max-width: 1220px) {
     .filters-main-container {
-        flex-direction: column; /* Stack the filters and switch vertically */
-        align-items: flex-start; /* Align to the left (use 'center' if you prefer) */
-        gap: 1.5rem; /* Add spacing between the scrolling list and the switch */
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        gap: 1.5rem; 
+    }
+
+    .filters{
+        font-size: 1.1rem;
+    }
+
+    .filter{
+        min-width: fit-content;
     }
 }
+
+
+.navbar-collapse{
+    background-color: white;
+    border-radius: 25px;
+    padding: 1.2rem;
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+    border: 2px rgb(248, 67, 6);
+    border-style: solid;
+}
+.small-screen-search{
+    display: none;
+}
+
+.small-screen-search .d-flex input{
+    max-width: fit-content;
+}
+
+.small-screen-search .d-flex{
+    min-height: 2.5rem;
+}
+
+.d-flex-custom{
+        display: flex;
+    }
+
+@media (width<= 991px) {
+    .small-screen-search{
+        display:flex;
+        justify-content: center;
+
+    }
+    
+}
+
+.navbar-brand{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .small-screen-show{
+    display: none;
+}
+@media (width<= 1200px) {
+    .small-screen-show{
+        display: flex;
+        flex-direction: column;
+    }
+    .large-screen-show{
+        display: none;
+    }
+    
+} */

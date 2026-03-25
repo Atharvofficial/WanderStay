@@ -1,8 +1,8 @@
 <% layout("/templates/boilerplate.ejs") -%>
 
 <body>
-    <div class="row offset-3">
-        <div class="col-8">
+    <div class="row offset-lg-3">
+        <div class="col-lg-8">
             <h1>Edit Listing</h1>
             <br>
             <form action="/listings/<%= listing._id %>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
@@ -69,9 +69,8 @@
                         Looks good!
                     </div>
                 </div>
-                <br><br>
-
-                <button class="btn btn-add">Edit</button>
+                
+                <button class="btn btn-add mb-3">Edit</button>
             </form>
         </div>
     </div>
